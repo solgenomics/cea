@@ -13,7 +13,7 @@ my $json = JSON::Any->new;
 
 
 <center>
-	<h1><img src="/static/images/expr_small.png" height="40" style="margin-bottom:10px;"/> Expression Viewer</h1>
+	<h1>Expression Viewer</h1>
 
 	<div class="well" style="width:900px;margin-bottom:30px;">
 		
@@ -67,76 +67,98 @@ my $json = JSON::Any->new;
 </center>
 
 <div class="well" style="width:900px;margin:0 auto;clear:both;">
+  
   <div class="row">
     
     <div class="col-sm-6 col-md-6 col-lg-6">
-      <div style="text-align: center; width=100%">Projects</div>
-      <div id="expr_params" class="panel panel-primary" style="overflow: scroll;">
-        <!-- <div class="panel-heading">Genotypes</div> -->
+      <div class="row">
+      
+        <div style="text-align: center; width=100%">Projects</div>
+        <div id="projects_panel" class="panel panel-primary">
+          <!-- <div class="panel-heading">Genotypes</div> -->
         
-        <div class="panel-body">
-          <form role="form" id="organism_col">
-            <% $project_html %>
-          </form>
-        </div>
-      </div>
-    </div>
-      
-    <div class="col-sm-6 col-md-6 col-lg-6">
-       <div id="expr_params" class="panel" style="margin-top: 25px;">
-          <!-- <div class="panel-heading"> -->
-            <!-- Correlation filter: 0.<input type="text" id="amount" readonly style="border:0;font-size:18px;background-color: #f5f5f5;" size="4"> -->
-          <!-- </div> -->
           <div class="panel-body">
-            Correlation filter: 0.<input type="text" id="amount" readonly style="border:0;font-size:18px;background-color: #fff;" size="4">
-            <br>
-            <br>
-            <div id="correlation_slider"></div>
+            <form role="form" id="organism_col">
+              <% $project_html %>
+            </form>
           </div>
-      </div>
+        </div>
       
-    </div>
+      </div> <!-- close row -->
     
-  </div>
+      <div class="row">
+      
+        <div id="correlation_panel" class="panel">
+            <!-- <div class="panel-heading"> -->
+              <!-- Correlation filter: 0.<input type="text" id="amount" readonly style="border:0;font-size:18px;background-color: #f5f5f5;" size="4"> -->
+            <!-- </div> -->
+            <div class="panel-body">
+              Correlation filter: 0.<input type="text" id="amount" readonly style="border:0;font-size:18px;background-color: #fff;" size="4">
+              <br>
+              <br>
+              <div id="correlation_slider"></div>
+            </div>
+        </div> <!-- close panel -->
+      
+      </div> <!-- close row -->
+    
+    </div> <!-- close col -->
   
-  <br/>
-  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
     
-    <div class="col-sm-3 col-md-3 col-lg-3">
-      <div style="text-align: center; width=100%">Developmental Stages</div>
+      <div class="row">
+      
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div style="text-align: center; width=100%">Accessions</div>
 
-      <select multiple id="stage_col" class="form-control wizard_select" size="10"></select>
-      <button class="select_all btn btn-default">Select All</button>
-      <button class="select_none btn btn-default pull-right">Unselect</button>
-    </div>
+          <select multiple id="stage_col" class="form-control wizard_select" size="25" style="height: 450px"></select>
+          <button class="select_all btn btn-default">Select All</button>
+          <button class="select_none btn btn-default pull-right">Unselect</button>
+        </div> <!-- close col -->
     
-    <div class="col-sm-3 col-md-3 col-lg-3">
-      <div style="text-align: center; width=100%">Organs</div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="row" style="margin-right: -5px;">
+            
+          <div style="text-align: center; width=100%">Organs</div>
       
-      <select multiple id="organ_part_col" class="form-control wizard_select" size="10"></select>
-      <button class="select_all btn btn-default">Select All</button>
-      <button class="select_none btn btn-default pull-right">Unselect</button>
-    </div>
-      
-    <div class="col-sm-3 col-md-3 col-lg-3">
-      <div style="text-align: center; width=100%">Tissues/Cell types</div>
+          <select multiple id="organ_part_col" class="form-control wizard_select" size="10" style="height: 187px"></select>
+          <button class="select_all btn btn-default">Select All</button>
+          <button class="select_none btn btn-default pull-right">Unselect</button>
+          
+          </div> <!-- close row -->
+          
+          <div class="row" style="margin-right: -5px;">
+            <br>
+            
+            <!-- <div class="col-sm-6 col-md-6 col-lg-6"> -->
+              <!-- <div style="text-align: center; width=100%">Tissues/Cell types</div> -->
 
-      <select multiple id="tissue_col" class="form-control wizard_select" size="10"></select>
-      <button class="select_all btn btn-default">Select All</button>
-      <button class="select_none btn btn-default pull-right">Unselect</button>
-    </div>
+              <select multiple id="tissue_col" class="form-control wizard_select" size="10" style="display:none"></select>
+              <!-- <button class="select_all btn btn-default">Select All</button> -->
+              <!-- <button class="select_none btn btn-default pull-right">Unselect</button> -->
+            <!-- </div> --> <!-- close col -->
       
-    <div class="col-sm-3 col-md-3 col-lg-3">
-      <div style="text-align: center; width=100%">Treatments</div>
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12"> -->
+              <div style="text-align: center; width=100%">Treatments</div>
 
-      <select multiple id="condition_col" class="form-control wizard_select" size="10"></select>
-      <button class="select_all btn btn-default pull-left">Select All</button>
-      <button class="select_none btn btn-default pull-right">Unselect</button>
-    </div>
+              <select multiple id="condition_col" class="form-control wizard_select" size="10" style="height: 180px"></select>
+              <button class="select_all btn btn-default pull-left">Select All</button>
+              <button class="select_none btn btn-default pull-right">Unselect</button>
+            <!-- </div> --> <!-- close col -->
     
-  </div>
+          </div> <!-- close row -->
+          
+        </div> <!-- close col -->
+        
+        
+      </div> <!-- close row -->
+      
+    
+    </div> <!-- close col -->
   
-</div>
+  </div> <!-- close row -->
+  
+</div> <!-- close well -->
 <br/>
 
 <center>
@@ -147,6 +169,27 @@ my $json = JSON::Any->new;
 <br/>
 <br/>
 <br/>
+
+<style>
+
+#projects_panel {
+   text-decoration:none;
+   height:375px;
+   font-size:18px;
+   white-space: nowrap;
+   overflow: scroll;
+   margin-left: 10px;
+ }
+
+#correlation_panel {
+   text-decoration:none;
+   font-size:18px;
+   white-space: nowrap;
+   margin-left: 10px;
+ }
+
+</style>
+
 
 
 <script>
