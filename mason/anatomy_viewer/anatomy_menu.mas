@@ -9,10 +9,10 @@
   <br>
   <div style="width:800px;">
     
-    <div class="anatomy_section">
+    <!-- <div class="anatomy_section">
       <a class="anatomy_link" href="/anatomy_viewer/microscopy">
         <h2 class="anatomy_title">Light Microscopy & Drawings</h2>
-      		<img style="width:800px;" src="static/images/anatomy_viewer/menu/RR_Anatomy-no_header.jpg"><br>
+          <img style="width:800px;" src="static/images/anatomy_viewer/menu/RR_Anatomy-no_header.jpg"><br>
           Browse detailed drawing from light microscopy images of tomato fruit.
       </a>
     </div>
@@ -20,16 +20,16 @@
     <div class="anatomy_section">
       <a class="anatomy_link" href="/anatomy_viewer/tomography">
         <h2 class="anatomy_title">Computed Tomography images & videos</h2>
-      
-        <div style="margin-bottom:10px">
-      		<img style="height:182px;" src="static/images/anatomy_viewer/menu/tomography2.png">
-      		<img style="height:182px;" src="static/images/anatomy_viewer/menu/tomography.png">
-        </div>
-    		Explore our high resolution CT images and videos of tomato fruit development.
-      </a>
-    </div>
 
-    <!-- <div class="anatomy_section">
+        <div style="margin-bottom:10px">
+          <img style="height:182px;" src="static/images/anatomy_viewer/menu/tomography2.png">
+          <img style="height:182px;" src="static/images/anatomy_viewer/menu/tomography.png">
+        </div>
+        Explore our high resolution CT images and videos of tomato fruit development.
+      </a>
+    </div> -->
+
+    <div class="anatomy_section">
       <h2  class="anatomy_title">View project details</h2>
       <ul class="ul_blue">
         <%perl>
@@ -38,7 +38,7 @@
           }
         </%perl>
       </ul>
-    </div> -->
+    </div>
     <br>
   
   </div>
