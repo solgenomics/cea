@@ -171,6 +171,12 @@ $(document).ready(function () {
          <input id="gene" class="gene_autocomplete form-control col-xs-2" type="input" name="input_gene"/>
         </div>
         <button class="btn btn-primary" id="run_tool" value="Run Expression Tool">Get Expression</button>
+		
+		<br/><br/>
+		<label>For Reference Only:</label>
+		<div class="form-group">
+			<& /Expression_viewer/complete_compound_select.mas &>
+        </div>
       </form>
 
       <form id="download_data" method="post" action="/download_expression_data/" enctype="multipart/form-data">
