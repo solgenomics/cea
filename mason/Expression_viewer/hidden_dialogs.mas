@@ -1,3 +1,22 @@
+<%args>
+$input_gene => ()
+</%args>
+
+<div class="modal fade" id="gene_id_help" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Expression Search</h4>
+      </div>
+      <div class="modal-body">
+        <p>Paste a compound or gene name (Eg: <% $input_gene %>).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade" id="blast_help" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -150,9 +169,9 @@ Solyc04g008460
 Solyc01g102660
 </textarea>
           
-          <div class="checkbox pull-left">
-        		<label class="text-muted"><input type="checkbox" name="hotspot" disabled> Show cumulative expression</label>
-          </div>
+          <!-- <div class="checkbox pull-left">
+            <label class="text-muted"><input type="checkbox" name="hotspot" disabled> Show cumulative expression</label>
+          </div> -->
         
       		<input class="corr_filter" name="correlation_filter" style="display:none;"/>
       		<input class="organism_filter" name="organism_filter" style="display:none;"/>
@@ -181,40 +200,18 @@ Solyc01g102660
         <h4 class="modal-title">Parameters and Filters</h4>
       </div>
       <div class="modal-body">
-        <p>Choose any filter for your query.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- project options info dialog -->
-<div class="modal fade" id="projects_options_help" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Project Options</h4>
-      </div>
-      <div class="modal-body">
         <ul class="text-left">
           <li>
-            <b>Opt1:</b> Correlate metabolite and enzyme data for all accessions across all conditions: 'age of plant', 'time of day collected', and 'tissue'. Does not include agronomic data because the agronomic data does not include 'tissue' or 'time of day collected' conditions.
+            Select the data set (Project) you want to query.
           </li>
-          <br/>
           <li>
-            <b>Opt2:</b> Correlate metabolite, enzyme, and agronomic data for all accessions across the following conditions: 'age of plant', and 'tissue'. To accommodate the agronomic data, 'time of day collected' is not represented, and the metabolite and enzyme data is paired with its 'tissue'.
+            Set the minimum correlation value (0.65 - 1.0) to display co-expressed genes with similar expression profiles.<br>
+            <a href="/help/input_params/#cor_filter" target="blank">Read help page</a> for more information.
           </li>
-          <br/>
           <li>
-            <b>Opt3:</b> Correlate metabolite, enzyme, and agronomic data for all accessions across the following specific conditions: 'week_16' for metabolites and enzymes, 'week_16' for agronomic data, and 'tissue'. As in Opt2 to accommodate the agronomic data, 'time of day collected' is not represented, and the metabolite and enzyme data is paired with its 'tissue'.
-          </li>
-          <br/>
-          <li>
-            <b>Opt4:</b> Correlate metabolite, enzyme, and agronomic data for all accessions across the following specific conditions: 'week_16' for metabolites and enzymes, 'week_52' for agronomic data, and 'tissue'. As in Opt2 to accommodate the agronomic data, 'time of day collected' is not represented, and the metabolite and enzyme data is paired with its 'tissue'.
-          </li>
-          <br/>
-          <li>
-            <b>Opt5:</b> Correlate metabolite, enzyme, and agronomic data for all accessions EXCEPT TMEB419 across the following specific conditions: 'week_16' for metabolites and enzymes, 'week_52' for agronomic data, and 'tissue'. As in Opt2 to accommodate the agronomic data, 'time of day collected' is not represented, and the metabolite and enzyme data is paired with its 'tissue'. TMEB419 is excluded because agronomic traits were not collected for it in week_52 in some projects.
+            Filter the conditions to display: Stage, tissues, treatments, etc. 
+            Note that when no conditions are selected for filtering all the samples from the data set will be display.<br>
+            <a href="/help/input_params/#cond_sel" target="blank">Read help page</a> for more information.
           </li>
         </p>
       </div>
@@ -222,3 +219,47 @@ Solyc01g102660
   </div>
 </div>
 
+<!--  no input gene modal -->
+<div class="modal fade" id="no_gene_modal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="text-align: center;">ERROR</h4>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: center;">
+          <p>No Input Gene</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<!-- output dialogs -->
+<!-- working wheel modal -->
+<div class="modal fade" id="loading_modal" role="dialog">
+  <div class="modal-dialog">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="text-align: center;">Loading ...</h4>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: center;">
+          <p>The images are now downloading. This may take a minute.</p>
+          <img src=/static/images/wheel.gif>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
