@@ -40,7 +40,7 @@ $project_html => ()
   <br/>
   <div class="row">
     
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <div class="col-sm-4 col-md-4 col-lg-4">
       <div style="text-align: center; width=100%">Developmental Stages</div>
 
       <select multiple id="stage_col" class="form-control wizard_select" size="10"></select>
@@ -48,7 +48,7 @@ $project_html => ()
       <button class="select_none btn btn-default pull-right">Unselect</button>
     </div>
     
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <div class="col-sm-4 col-md-4 col-lg-4">
       <div style="text-align: center; width=100%">Organs</div>
       
       <select multiple id="organ_part_col" class="form-control wizard_select" size="10"></select>
@@ -56,7 +56,7 @@ $project_html => ()
       <button class="select_none btn btn-default pull-right">Unselect</button>
     </div>
       
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <div class="col-sm-4 col-md-4 col-lg-4">
       <div style="text-align: center; width=100%">Tissues/Cell types</div>
 
       <select multiple id="tissue_col" class="form-control wizard_select" size="10"></select>
@@ -64,13 +64,13 @@ $project_html => ()
       <button class="select_none btn btn-default pull-right">Unselect</button>
     </div>
       
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <!--div class="col-sm-3 col-md-3 col-lg-3">
       <div style="text-align: center; width=100%">Treatments</div>
 
       <select multiple id="condition_col" class="form-control wizard_select" size="10"></select>
       <button class="select_all btn btn-default pull-left">Select All</button>
       <button class="select_none btn btn-default pull-right">Unselect</button>
-    </div>
+    </div-->
     
   </div>
   
