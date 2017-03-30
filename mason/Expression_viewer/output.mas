@@ -165,9 +165,10 @@ $(document).ready(function () {
       <div class="form-group">
        <input id="gene" class="gene_autocomplete form-control col-xs-2" type="input" name="input_gene"/>
       </div>
+      <button class="btn btn-primary" id="run_tool" value="Run Expression Tool">Get Expression</button>
+      <br/><br/>
       For Reference Only
       <& /Expression_viewer/complete_compound_select.mas &>
-      <button class="btn btn-primary" id="run_tool" value="Run Expression Tool">Get Expression</button>
     </form>
 
     <!-- TO DO add conditions in controller-->
