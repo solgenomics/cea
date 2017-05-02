@@ -1,5 +1,6 @@
 <%args>
 $project_html => ()
+$delete_enabled => ()
 </%args>
 
 <center>
@@ -12,7 +13,14 @@ $project_html => ()
   <div class="row">
     
     <div class="col-sm-6 col-md-6 col-lg-6">
-      <div style="text-align: center; width=100%">Projects <button type="button" class="info_icon" data-toggle="modal" data-target="#projects_options_help">i</button></div>
+      <div style="text-align: center; width=100%">
+        <%perl>
+           if ($delete_enabled) {
+             print "<a href=\"/manage_project\" target=\"blank\" class=\"pull-left\">Manage projects</a>"
+           }
+        </%perl>
+
+        Projects <button type="button" class="info_icon" data-toggle="modal" data-target="#projects_options_help">i</button></div>
       <div id="expr_params" class="panel panel-primary" style="overflow: scroll;">
         
         <div class="panel-body">
@@ -41,7 +49,7 @@ $project_html => ()
   <div class="row">
     
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <div style="text-align: center; width=100%">Developmental Stages</div>
+      <div style="text-align: center; width:100%">Developmental Stages</div>
 
       <select multiple id="stage_col" class="form-control wizard_select" size="10"></select>
       <button class="select_all btn btn-default">Select All</button>
@@ -49,7 +57,7 @@ $project_html => ()
     </div>
     
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <div style="text-align: center; width=100%">Organs</div>
+      <div style="text-align: center; width:100%">Organs</div>
       
       <select multiple id="organ_part_col" class="form-control wizard_select" size="10"></select>
       <button class="select_all btn btn-default">Select All</button>
@@ -57,7 +65,7 @@ $project_html => ()
     </div>
       
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <div style="text-align: center; width=100%">Tissues/Cell types</div>
+      <div style="text-align: center; width:100%">Tissues/Cell types</div>
 
       <select multiple id="tissue_col" class="form-control wizard_select" size="10"></select>
       <button class="select_all btn btn-default">Select All</button>
@@ -65,7 +73,7 @@ $project_html => ()
     </div>
       
     <!--div class="col-sm-3 col-md-3 col-lg-3">
-      <div style="text-align: center; width=100%">Treatments</div>
+      <div style="text-align: center; width:100%">Treatments</div>
 
       <select multiple id="condition_col" class="form-control wizard_select" size="10"></select>
       <button class="select_all btn btn-default pull-left">Select All</button>
@@ -94,5 +102,24 @@ $project_html => ()
     $( "#amount" ).val( $( "#correlation_slider" ).slider( "value" ) );
     $( ".corr_filter" ).val( $( "#correlation_slider" ).slider( "value" ) );
   });
+
+  $(document).ready(function() {
+   //
+   //     var cookie = $.cookie('sgn_session_id');
+   //
+   //     alert("my cookie: "+cookie);
+   //
+   //     $.ajax({
+   //       dataType: "json",
+   //       url: "https://sgn:eggplant@cassbase.org/authenticate/check/token",
+   //       data: ({cookie:cookie}),
+   //       success: function(data) {
+   //
+   //         alert("cookie: "+data.result);
+   //
+   //       }
+   //     });
+   //
+   // });
 
 </script>
