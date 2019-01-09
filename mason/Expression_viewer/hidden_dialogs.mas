@@ -10,7 +10,7 @@ $input_gene => ()
         <h4 class="modal-title">Expression Search</h4>
       </div>
       <div class="modal-body">
-        <p>Paste a gene name or metabolite compound or agronomic trait(Eg: <% $input_gene %>).</p>
+        <p>Paste a gene name or metabolite compound or agronomic trait (Eg: <% $input_gene %>). This will auto-complete based on the project you have selected.</p>
       </div>
     </div>
   </div>
