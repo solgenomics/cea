@@ -10,7 +10,7 @@ $input_gene => ()
         <h4 class="modal-title">Expression Search</h4>
       </div>
       <div class="modal-body">
-        <p>Paste a gene name or metabolite compound (Eg: <% $input_gene %>).</p>
+        <p>Paste a gene name or metabolite compound or agronomic trait(Eg: <% $input_gene %>).</p>
       </div>
     </div>
   </div>
@@ -166,7 +166,7 @@ MGTENWSLTAKLCDSCKTSPATVFCRADSAFLCLGCDCKIHAANKLASRHARVWVCEVCEQAPASVTCKADAAALCVTCD
       <div class="modal-body">
 
       	<form id="custom_list_form" method="post" enctype="multipart/form-data">
-        	<label for="custom_list">Paste a list of gene IDs</label>
+        	<label for="custom_list">Paste a list of gene IDs or metabolite compound IDs or agronomic trait IDs</label>
 
 <textarea id="custom_list" class="form-control" rows="10" name="input_gene" style="margin-top: 5px;">
 Solyc04g008460
