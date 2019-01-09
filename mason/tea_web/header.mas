@@ -21,7 +21,8 @@
       gtag('config', 'UA-2460904-14');
     </script>			
 		
-		<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
+		<!--<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>-->
+		<script type="text/javascript" src="/static/js/jqueryui/jquery-ui-1.12.1/jquery-ui.js"></script>
       
 	</head>
   
