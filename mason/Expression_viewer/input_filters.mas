@@ -17,7 +17,7 @@ $delete_enabled => ()
     <div class="col-sm-6 col-md-6 col-lg-6">
       <div style="width: 100%">
         
-        <span class=\"pull-left\">Projects <button type="button" class="info_icon" data-toggle="modal" data-target="#projects_options_help">i</button></span>
+        <div style="font-weight:700;margin-bottom:5px">Projects <button type="button" class="info_icon" data-toggle="modal" data-target="#projects_options_help">i</button><a href="/expression_viewer/project_menu" target="blank" style="float:right">more info</a></div>
         <%perl>
           if ($delete_enabled) {
             print "<a href=\"/expression_viewer/manage_project\" target=\"blank\" class=\"pull-right\">Manage projects</a>"
