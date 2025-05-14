@@ -15,14 +15,11 @@ $input_gene => ()
 <center>
 	<& hidden_dialogs.mas, input_gene => $input_gene &>
 	<& input_title.mas &>
+  <& input_options.mas, input_gene => $input_gene &>
 </center>
 
 	<& input_filters.mas, project_html => $project_html, delete_enabled => $delete_enabled &>
 <br/>
-
-<center>
-    <& input_options.mas, input_gene => $input_gene &>
-</center>
 
 <center>
   <div class="input_width">
